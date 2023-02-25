@@ -1,0 +1,61 @@
+.form {
+    margin: 3rem auto;
+    font-family: sans-serif;
+    max-width: 40rem;
+}
+.form .submit-btn {
+    font-family: sans-serif;
+    padding: 1rem 17.7rem;
+    cursor: pointer;
+    background: tomato;
+    border: 0;
+    border-radius: 2rem;
+    color: #FFF;
+    font-size: 1.5rem;
+    font-weight: bold;
+    transition: 5.3s background-color;
+}
+.form .n {
+		background: violet;
+		color: white;
+		font-weight: bold;
+		padding: 0.2rem 7rem;
+		font-size: 1.1rem;
+		
+}
+
+.form .u {
+		background: green;
+		color: white;
+		font-weight: bold;
+		padding: 0.2rem 7.5rem;
+		font-size: 1.1rem;
+		
+}
+
+.form .hour {
+		background: blue;
+		color: white;
+		font-weight: bold;
+		padding: 0.2rem 10rem;
+		font-size: 1.1rem;
+		
+}
+
+.form .card {
+		font-weight: bold;
+		padding: 1.2rem 14rem;
+		font-size: 1.1rem;
+		
+}
+
+.form .sum {
+		font-weight: bold;
+		font-size: 2rem;
+		padding: 1.8rem 5.5rem;
+}
+.form .free {
+		font-weight: bold;
+		font-size: 1.5rem;
+		padding: 1rem 5.5rem;
+}
