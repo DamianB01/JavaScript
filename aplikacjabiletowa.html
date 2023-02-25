@@ -1,0 +1,51 @@
+<form class="form">
+	<link href="bilety2.css" rel="stylesheet" type="text/css">
+	<div class="n"> Ilosc biletow normalnych: <input type="number" name="normalny" id="normalny" min="0"></div>
+	<div class="u"> Ilosc biletow ulgowych: <input type="number" name="ulgowy" id="ulgowy" min="0"></div>
+	<div class="hour"> Ilosc godzin: <input type="number" name="godzina" id="godzina" min="1"></div>
+	<div class="card"><input type="checkbox" name="karta" id="karta">Karta duzej rodziny</div>
+	<button type="submit" class="submit-btn" id="przycisk">Oblicz</button>
+	<div class="sum" id="suma"></div>
+	<div class="free" id="free"></div>
+	<script>
+		function ponad15(){
+    if(ulgowy.value>=15){
+        const ilosc=Math.floor(ulgowy.value/15);
+        free.innerHTML="Otrzymujesz również "+ilosc+" normalnych biletów za darmo";
+    }
+    else {
+        free.innerHTML="";
+    }
+}
+const form = document.querySelector("form");
+const normalny = form.querySelector("#normalny");
+const ulgowy = form.querySelector("#ulgowy");
+const czas = form.querySelector("#godzina");
+const karta = form.querySelector("#karta");
+const suma = form.querySelector("#suma");
+const free = form.querySelector("#free");
+form.addEventListener("submit", e => {
+e.preventDefault();
+if (!karta.checked){
+    if(czas.value>4){
+        suma.innerHTML="Całowity koszt wstępu: "+(normalny.value*50+ulgowy.value*25)+" zł";
+        ponad15();
+    }
+    else {
+        suma.innerHTML="Całowity koszt wstępu: "+(normalny.value*10+ulgowy.value*5)*czas.value+" zł";
+        ponad15();
+    }
+}
+else {
+    if(czas.value>4){
+        suma.innerHTML="Całowity koszt wstępu: "+(normalny.value*50+ulgowy.value*25)*0.9+" zł";
+        ponad15();
+    }
+    else {
+    suma.innerHTML="Całowity koszt wstępu: "+((normalny.value*10+ulgowy.value*5)*czas.value)*0.9+" zł";
+    ponad15();
+    }
+}
+})
+	</script>
+</form>
